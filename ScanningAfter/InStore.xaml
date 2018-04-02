@@ -1,0 +1,37 @@
+﻿<Window x:Class="ScanningAfter.InStore"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScanningAfter"
+        mc:Ignorable="d"
+       xmlns:aforge="clr-namespace:AForge.Controls;assembly=AForge.Controls"
+       Title="InStore" Height="555.333" Width="450.667" WindowStartupLocation="CenterScreen" Background="#1c2838" Closed="Window_Closed" Topmost="False" BorderBrush="#FF252526">
+    <Grid>
+        <WindowsFormsHost x:Name="WfiWfh" Height="150" Width="200" VerticalAlignment="Top" Margin="233,10,10,0">
+            <aforge:VideoSourcePlayer x:Name="sourcePlayer" Dock="Top" Width="200" Height="300" AutoSizeControl="False" AllowDrop="False"/>
+        </WindowsFormsHost>
+        <Label Content="品牌：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,10,383,489" />
+            <TextBox x:Name="pinpai" Height="25" Width="100" Margin="65,10,278,489"/>
+        <Label Content="品名：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,44,383,455"/>
+            <TextBox x:Name="pinming" Height="25" Width="100" Margin="65,44,278,455"/>
+        <Label Content="型号：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,77,383,422"/>
+            <TextBox x:Name="xinghao" Height="25" Width="100" Margin="65,77,278,422"/>
+        <Label Content="售价：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,116,383,383"/>
+            <TextBox x:Name="shoujia" Height="25" Width="100" Margin="65,116,278,383" KeyDown="zongliang_KeyDown" TextChanged="zongliang_TextChanged"/>
+        <Label Content="成本：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,172,383,327"/>
+            <TextBox x:Name="chengben" Height="25" Width="100" Margin="65,172,278,327"  KeyDown="zongliang_KeyDown" TextChanged="zongliang_TextChanged"/>
+        <Label Content="条码：" Foreground="White" Height="25" Width="50" Padding="0,0,0,5" Margin="10,217,383,282"/>
+            <TextBox x:Name="tiaoma" IsEnabled="False" Height="25" Width="100" Margin="65,217,278,282"/>
+        <Label Content="总量：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,262,383,237"/>
+            <TextBox x:Name="zongliang" Text="1" Height="25" Width="100" Margin="65,262,278,237"  KeyDown="zongliang_KeyDown" TextChanged="zongliang_TextChanged"/>
+        <Label Content="来源：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,304,383,195"/>
+            <TextBox x:Name="laiyuan" Height="25" Width="100" Margin="65,304,278,195"/>
+        <Label Content="备注：" Padding="0,0,0,5" Foreground="White" Height="25" Width="50" Margin="10,345,383,154"/>
+        <TextBox x:Name="beizhu" Height="50" TextWrapping="Wrap" Width="100" Margin="65,345,278,129" />
+        <Image x:Name="myImage" Source="Images/moren.jpg"  Height="150" Width="200" Margin="233,205,10,169" />
+        <Button Content="开始摄像" x:Name="shex" Click="Button_Click_2" Style="{StaticResource MyWpfButton}"  Height="30" Width="90" Margin="276,165,67,319" />
+        <Button Content="拍照" Width="90" Height="30" x:Name="cut" Style="{StaticResource MyWpfButton}"  Click="cut_Click" IsEnabled="False" Margin="276,355,67,129" />
+        <Button Content="确认"  Style="{StaticResource MyWpfButton}" Width="130" Height="30" x:Name="canfirm" Click="canfirm_Click" Margin="123,434,120,40"/>
+    </Grid>
+</Window>
